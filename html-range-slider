@@ -1,0 +1,27 @@
+                                           
+                               <!-- If the below code doesnt work, import bootstrap cdn in your <head></head> -->
+                               <div class="form-group  text-2xl">
+                                    <label class="control-label" for="inputDefault">
+                                        Price ({{ currencySign() }}) </label>
+                                        <div class="text-3xl">
+                                            <span>{{ currencySign() }}</span><span id="countRange"></span>
+                                        </div>
+                                        <input type="range" min="1000" step="5" max="50000"
+                                         onclick="myFunctionRange()"   required  class="form-control" id="rangeSl">
+                                    {{-- <input type="number" name="price" placeholder="Course Title..."
+                                        class="form-control" required> --}}
+                                </div>
+
+                                <script type="text/javascript" >
+                                myFunctionRange();
+                                function myFunctionRange(){
+                                    $(document).ready(function() {
+                                     document.getElementById("countRange").innerHTML = numberWithCommas(document.getElementById("rangeSl").value); 
+                                  
+                                    });
+                                }
+                                   
+                                function numberWithCommas(x) {
+                                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                }
+                                    </script>
